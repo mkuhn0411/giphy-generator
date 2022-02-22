@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import { createStore } from 'vuex';
 import App from './App.vue';
+import router from './router/router.js'
 
 const store = createStore({
     state() {
@@ -15,16 +16,14 @@ const store = createStore({
     },
     mutations: {
         setCurrentGif(state, payload) {
-            console.log(payload)
 
-            if (state.allGifs.length === 0) {
+            if (state.currentRating === null) {
                 state.currentGif = payload.embed_url;
                 state.currentTitle = payload.title;
             }
             else {
                 var obj = { url: state.currentGif, title: state.currentTitle, rating: state.currentRating }
                 state.allGifs.push(obj);
-                console.log(state.allGifs)
 
                 state.currentGif = payload.embed_url;
                 state.currentTitle = payload.title;
@@ -35,7 +34,6 @@ const store = createStore({
         },
         setCurrentRating(state, payload) {
             state.currentRating = payload;
-            state.allGifs.push(payload);
         },
         handleRatingError(state, payload) {
             state.ratingError = payload;
@@ -67,6 +65,9 @@ const store = createStore({
         },
         getCurrentRating(state) {
             return state.currentRating;
+        },
+        getGifCollection(state) {
+            return state.allGifs
         }
     },
 });
@@ -74,5 +75,6 @@ const store = createStore({
 const app = createApp(App);
 
 app.use(store);
+app.use(router);
 app.mount('#app');
 

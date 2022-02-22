@@ -6,6 +6,7 @@
                 <rating-control></rating-control>
             </div>
             <p class="error-text" v-if="$store.state.ratingError">Please select a rating</p>
+            <p>Then type a keyword to generate a new gif!</p>
             <div class="form-control">
                 <input 
                     :class="{error: $store.state.formError}" 

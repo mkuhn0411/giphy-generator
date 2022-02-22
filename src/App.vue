@@ -4,7 +4,6 @@
     <base-container>
       <h3>Time to generate a gif, my dudes</h3>
       <router-view></router-view>
-      <home></home>
     </base-container>
   </main>
   
@@ -12,7 +11,6 @@
 
 <script>
 import TheNav from './components/nav/TheNav.vue';
-import Home from './components/Home.vue';
 import BaseContainer from './components/BaseContainer.vue';
 
 export default {
@@ -20,7 +18,6 @@ export default {
   components: {
     TheNav,
     BaseContainer,
-    Home
   },
   mounted() {
     this.$store.dispatch('setCurrentGif', 'ferret');

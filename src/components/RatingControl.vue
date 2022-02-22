@@ -2,10 +2,10 @@
     <p>Rate the gif</p>
     <ul>
         <li><button :class="{active: $store.state.currentRating === '1'}" @click.prevent="setCurrentRating('1')">1</button></li>
-        <li><button :class="{active: $store.state.currentRating  === '2'}" @click.prevent="setCurrentRating('2')">2</button></li>
-        <li><button :class="{active: $store.state.currentRating  === '3'}" @click.prevent="setCurrentRating('3')">3</button></li>
-        <li><button :class="{active: $store.state.currentRating  === '4'}" @click.prevent="setCurrentRating('4')">4</button></li>
-        <li><button :class="{active: $store.state.currentRating  === '5'}" @click.prevent="setCurrentRating('5')">5</button></li>
+        <li><button :class="{active: $store.state.currentRating === '2'}" @click.prevent="setCurrentRating('2')">2</button></li>
+        <li><button :class="{active: $store.state.currentRating === '3'}" @click.prevent="setCurrentRating('3')">3</button></li>
+        <li><button :class="{active: $store.state.currentRating === '4'}" @click.prevent="setCurrentRating('4')">4</button></li>
+        <li><button :class="{active: $store.state.currentRating === '5'}" @click.prevent="setCurrentRating('5')">5</button></li>
     </ul>
 </template>
 
