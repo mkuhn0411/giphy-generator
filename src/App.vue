@@ -5,8 +5,7 @@
       <h3>Time to generate a gif, my dudes</h3>
       <router-view></router-view>
     </base-container>
-  </main>
-  
+  </main> 
 </template>
 
 <script>
@@ -26,6 +25,11 @@ export default {
 </script>
 
 <style>
+iframe {
+    border: none;
+    max-width: 100%;
+}
+
 body {
   margin: 0;
 }

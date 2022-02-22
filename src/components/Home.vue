@@ -68,10 +68,6 @@ export default {
 </script>
 
 <style scoped>
-iframe {
-    border: none
-}
-
 .form-control {
     margin: 20px 0 0;
     display: flex;
