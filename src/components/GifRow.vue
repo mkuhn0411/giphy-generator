@@ -7,12 +7,15 @@
       <div class="column column-two">
          <p><span class="bold">Title: </span>{{title}}</p>
          <p class="rating" :class="ratingClass">{{rating}}</p>
+         <button @click.prevent="removeGif(title)">Remove Gif</button>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   props: {
     title: String,
@@ -27,16 +30,28 @@ export default {
         high: this.rating >= 4
       }
     }
+  },
+  methods: {
+      ...mapActions(['removeGif'])
   }
 }
 </script>
 
 <style scoped>
+iframe {
+  max-width: calc(100% - 20px);
+}
+
 .row,
 .column {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.row {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,.5);
 }
 
 .bold {
@@ -46,11 +61,15 @@ export default {
 .column {
   flex-direction: column; 
   text-align: left;
-  width: 50%;
+}
+
+.column-one {
+  width: 40%;
 }
 
 .column-two {
-  justify-content: flex-start
+  align-items: flex-start;
+  width: 60%;
 }
 
 .column p {
@@ -61,6 +80,7 @@ export default {
   width: auto;
   padding: 5px 10px;
   color: #fff;
+  margin: 0;
 }
 
 .column .low {
@@ -74,5 +94,13 @@ export default {
 
 .column .high {
   background-color:#85e085;
+}
+
+button {
+  border: none;
+  background-color: #9933ff;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 10px 0 0;
 }
 </style>

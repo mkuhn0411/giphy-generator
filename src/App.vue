@@ -2,7 +2,6 @@
   <the-nav></the-nav>
   <main>
     <base-container>
-      <h3>Time to generate a gif, my dudes</h3>
       <router-view></router-view>
     </base-container>
   </main> 

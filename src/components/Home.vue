@@ -1,5 +1,6 @@
 <template>
     <section>
+        <h3>Time to generate a gif, my dudes</h3>
         <iframe :src="getCurrentGif" allowFullScreen></iframe>
         <form @submit.prevent="addGif">
             <div class="rating-container">

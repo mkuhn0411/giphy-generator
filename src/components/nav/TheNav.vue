@@ -12,7 +12,7 @@
 
 <style scoped>
  section {
-     background-color: #ff0080;
+     background-color: #9933ff;
      color: #fff;
      font-size: 2.0rem;
      padding: 10px 0;
@@ -39,6 +39,11 @@
      color: #fff;
      text-decoration: none;
      margin: 0;
+     padding: 5px;
+ }
+
+ a.router-link-active {
+     border: 1px solid #fff;
  }
 
 
